@@ -9,6 +9,7 @@ import AddProduct from './Components/AddProduct'
 import DeleteProduct from './DeleteProduct'
 import UpdateProducts from './UpdateProducts'
 import AdminProduct from './Components/AdminProduct'
+import { Button } from 'react-bootstrap'
 
 
 const AdminHome = () => {
@@ -18,8 +19,10 @@ const AdminHome = () => {
     }
   return (
     <div>
-    <AdminProduct/>
-      <button onClick={handleNavigateAddProduct}>Add Product</button>
+    <AdminProduct>
+      <Button onClick={handleNavigateAddProduct}>Add Product</Button>
+
+    </AdminProduct>
     </div>
   )
 }

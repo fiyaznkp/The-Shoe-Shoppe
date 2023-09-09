@@ -7,7 +7,7 @@ import StarRating from '../../../Components/StarRating'
 import { myContext } from '../../../App'
 import UpdateModal from './UpdateModal'
 
-const AdminProduct = () => {
+const AdminProduct = ({children}) => {
   const {cart, setCart, login, setLogin,filterValue,setFilterValue, searchValue,setSearchValue,product,setProduct,searchBackup,setSearchBackup} = useContext(myContext)
   const navigate = useNavigate()
   const [showUpdate, setShowUpdate] = useState(false)
@@ -62,7 +62,7 @@ const AdminProduct = () => {
   
   return (
     <>
-<div className='mt-4 ms-3'><AllProducts handleFilter={handleFilter}/></div>
+<div className='mt-4 mx-5 d-flex justify-content-between'><AllProducts handleFilter={handleFilter}/> {children}</div>
     <Container>
     <UpdateModal handleClos={handleClose} data = {[showUpdate,setShowUpdate,handleClose,handleShow,updateData,setUpdateData]} />
     
