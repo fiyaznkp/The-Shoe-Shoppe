@@ -35,24 +35,24 @@ function Sidebar({isAdmin}) {
      )}
      {!isAdmin && (
       <>
-      <a href="home">
+      <Link to="home">
       <i className="fa fa-home" aria-hidden="true"></i>
       Home
-    </a>
-      <a href="about">
+    </Link>
+      <Link to="about">
     
       <i className="fa fa-book" aria-hidden="true"></i>
       About
-    </a>
+    </Link>
     
-    <a href="contact">
+    <Link to="contact">
       <i className="fa fa-support" aria-hidden="true"></i>
       Contact
-    </a>
-    <a href="rules">
+    </Link>
+    <Link href="rules">
       <i className="fa fa-lock " aria-hidden="true"></i>
       Rules & Regulations
-    </a>
+    </Link>
     </>
      )}
      
