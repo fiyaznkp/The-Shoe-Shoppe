@@ -1,4 +1,3 @@
-import React from 'react'
 import Asics from "../Components/Asics.jpg"
 import { Card } from 'react-bootstrap'
 

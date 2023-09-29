@@ -4,7 +4,7 @@ import Home from './Home'
 import About from "./About"
 
  
-import 'boxicons';
+
 import {AiOutlineMenu} from "react-icons/ai"
 import 'font-awesome/css/font-awesome.min.css';
 import './Sidebar.css'
