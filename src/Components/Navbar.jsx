@@ -4,10 +4,9 @@ import { ShoppingCart } from "@phosphor-icons/react";
 import "./Navbar.css";
 import { Button } from "react-bootstrap";
 import { myContext } from "../App";
-import Badge from "react-bootstrap/Badge";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import { useState } from "react";
-import Wishlist from "./Wishlist";
+
 import {GrFavorite} from "react-icons/gr";
 
 
@@ -16,18 +15,11 @@ import Modal from "react-bootstrap/Modal";
 function Navbar() {
   const {pathname} = useLocation();
   const {
-    cart,
     setCart,
-    login,
-    setLogin,
-    searchValue,
     setSearchValue,
     trigger,
     loginUser,
-    setLoginUser,
-    wishlist,
-    setWishlet,
-    userData,
+    setLoginUser
     
   } = useContext(myContext);
   const [adminLogin, setAdminLogin] = useState();

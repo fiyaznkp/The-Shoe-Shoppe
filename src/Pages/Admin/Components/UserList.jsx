@@ -1,11 +1,9 @@
 import  { useContext } from "react";
 import { myContext } from "../../../App";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import Table from 'react-bootstrap/Table'
 
 const UserList = () => {
-  const { userData, setUserData } = useContext(myContext);
+  const { userData } = useContext(myContext);
   
   return (
     <div className="users">
