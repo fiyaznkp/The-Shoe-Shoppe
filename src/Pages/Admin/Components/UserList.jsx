@@ -1,26 +1,38 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { myContext } from "../../../App";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Table from 'react-bootstrap/Table'
 
 const UserList = () => {
   const { userData, setUserData } = useContext(myContext);
-  console.log(userData);
+  
   return (
-    <div>
-    <p>Test</p>
+    <div className="users">
+    <h4 style={{marginLeft:"20px", marginTop:"10px"}}>List of Registered Users</h4>
+
+    <Table style={{marginLeft:"10px", marginRight:"10px", width:"400px"}}>
+    <thead>
+        <tr>
+          {/* <th>#</th> */}
+          <th>Name</th>
+          <th>Email</th>
+         </tr>
+      </thead>
+      <tbody>
       {userData?.map((user) => {
-       return (<><Card style={{ width: "18rem" }}>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-          <Card.Body>
-            <Card.Title>{user.name}</Card.Title>
-            <Card.Text>
-              {user.email}
-            </Card.Text>
-            {/* <Button variant="primary">Go somewhere</Button> */}
-          </Card.Body>
-        </Card></>)
+       return (<>
+        <tr>
+        
+          <td>{user.name}</td>
+          <td>{user.email}</td>
+        </tr>
+       </>
+       )   
       })}
+      </tbody>
+    
+      </Table>
     </div>
   );
 };

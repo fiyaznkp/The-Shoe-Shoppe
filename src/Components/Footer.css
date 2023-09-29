@@ -1,0 +1,18 @@
+.footer{
+  height: 60px;
+  background-color:whitesmoke;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  
+} */
+
+.about{
+    color: blue;
+    margin-left: 20px;
+    padding-bottom:50px;
+}

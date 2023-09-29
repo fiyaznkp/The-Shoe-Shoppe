@@ -2,7 +2,7 @@ import React from 'react'
 
 function UsersList() {
   return (
-    <div>UsersList</div>
+    <div className='userlist'>UsersList</div>
   )
 }
 

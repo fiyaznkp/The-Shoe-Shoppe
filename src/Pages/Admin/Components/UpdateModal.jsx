@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -6,25 +6,26 @@ import Modal from 'react-bootstrap/Modal';
 import { myContext } from '../../../App';
 
 
-const UpdateModal = ({data,handleClos}) => {
-//  const [updateData,setUpdateData] = useState([])
+const UpdateModal = ({data}) => {
+
  const[showUpdate,setShowUpdate,handleClose,handleShow,updateData,setUpdateData] = data
- console.log(handleClos,"assjhdkasjhdkj");
- const {product,setProduct,searchBackup,setSearchBackup} = useContext(myContext)
+ 
+ const {product,setProduct,searchBackup} = useContext(myContext)
  const [previewImage, setPreviewImage] = useState(null);
 
 
  const handleUpdate = (e)=>{
     e.preventDefault()
+    console.log(updateData.Image)
     const prodObj = {
     
     Model:e.target.model.value,
     AvailableSizes:e.target.size.value.split(','),
     color:e.target.color.value,
     Price:e.target.price.value,
-    Image:previewImage
+    Image:previewImage|| updateData.Image
     }
-console.log(e,"eeeeeeeeeee");
+
   const updatedProduct = product.find(p=>p.id==updateData.id);   
   updatedProduct.Model=prodObj.Model
   updatedProduct.AvailableSizes=prodObj.AvailableSizes
@@ -32,7 +33,7 @@ console.log(e,"eeeeeeeeeee");
   updatedProduct.Price=prodObj.Price
   updatedProduct.Image=prodObj.Image
 
-//   handleClose()
+
   setShowUpdate(false)
  }
  const handleImageChange = (e) => {
@@ -50,10 +51,7 @@ console.log(e,"eeeeeeeeeee");
   return (  
     <div>
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-
+      
       <Modal show={showUpdate} onHide={setShowUpdate}>
         <Modal.Header closeButton>
           <Modal.Title>Update Product</Modal.Title>
@@ -103,7 +101,7 @@ console.log(e,"eeeeeeeeeee");
             </Form.Group>
             
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>color</Form.Label>
+              <Form.Label></Form.Label>
               <Form.Control
                 type="file"
                 placeholder=""

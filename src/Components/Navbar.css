@@ -1,24 +1,33 @@
 .navbar{
-  width: 100%;
+  /* width: 100%; */
   height: 80px;
-  background-color: black;
+  background-color:whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   
 
 }
 .Links{
     margin-right: 50px;
     display: flex;
-    align-items: center;   
+    align-items: center;
+    
+    
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 .shop{
     color: bisque;
     
 }
 .logo{
-    color: aliceblue;
+    color:black;
     margin: left 45px;
 
 }
@@ -27,9 +36,10 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    color: black;
 }
 .quote{
-    color: azure;
+    color:black;
     font: size 10px;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 5px;
@@ -37,3 +47,5 @@
 }.SearchBox{
     margin-left: 900px;
 }
+.
+

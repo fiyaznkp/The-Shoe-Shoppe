@@ -1,13 +1,18 @@
-import React, { useState,useContext } from "react"
+import React, { useState,useContext, useEffect } from "react"
 import "./Loginform.css"
 import { NavLink, useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import { myContext } from "../App"
+import bgpic from "../../public/Pics/pic1.jpg"
+
+
+
 
 
 
 const Loginform = () => {
-    const {userData,trigger,setTrigger} = useContext(myContext)
+    
+    const {userData,trigger,setTrigger,loginUser,setLoginUser} = useContext(myContext)
     // console.log(userData,"userData in login page");
     const navigate = useNavigate()
     if (localStorage.getItem("login") == "true") {
@@ -15,32 +20,34 @@ const Loginform = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        
         const email = e.target.email.value
         const password = e.target.password.value
         try {
-           const user = userData.find(x=>x.email==email && x.password==password)
-           if(user){
-            localStorage.setItem("login",true)
-            localStorage.setItem("AdminLogin",false)
-            window.alert("successfull login")
-            setTrigger(!trigger)
-            navigate('/products')
-           }
-           else{
+            const user = userData.find(x=>x.email==email && x.password==password)
+            if(user){
+                localStorage.setItem("login",true)
+                localStorage.setItem("AdminLogin",false)
+                setLoginUser(user)
+                window.alert("successfull login")
+                setTrigger(!trigger)
+                navigate('/products')
+            }
+            else{
                 window.alert("invalid credential")
-           }
+            }
             
         } catch (error) {
             Window.alert("invalid username or password")
         }
         
         
-
     }
+  
     return (
 
         <div style={{ height: "90vh" }} className="d-flex justify-content-center align-items-center p-0 m-0">
+        <img src={bgpic} style={{width:"100%", height:"900px", position:"absolute", top:"0px", left:"0px", zIndex:-1}}/>
             <div className="Login bg-dark-subtle p-5 m-0 rounded-3 ">
                 <form className="d-flex flex-column" onSubmit={handleSubmit}>
                     <label >Email</label>

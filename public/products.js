@@ -10,6 +10,9 @@ import Unisex from "../public/Pics/Puma Unisex.jpg"
 import Skechers from "../public/Pics/Skechers Arch Fit.jpg"
 import Saloman from "../public/Pics/Saloman.jpg"
 import Asics from "../public/Pics/Asics.jpg"
+import pic1 from "../public/Pics/pic1.jpg"
+
+
 
 
 export let products = [
@@ -140,6 +143,6 @@ export let products = [
        ratings:4,
        Image:Asics
 
-    } 
-
+    },
+    
 ]

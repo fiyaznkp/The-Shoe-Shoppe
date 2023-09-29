@@ -10,6 +10,10 @@ import DeleteProduct from './DeleteProduct'
 import UpdateProducts from './UpdateProducts'
 import AdminProduct from './Components/AdminProduct'
 import { Button } from 'react-bootstrap'
+import Sidebar from '../../Components/Sidebar'
+
+
+
 
 
 const AdminHome = () => {
@@ -18,12 +22,23 @@ const AdminHome = () => {
         navigate('/addproduct')
     }
   return (
-    <div>
-    <AdminProduct>
+
+    <div className='row col-12 mt-3 ms-3'>
+    <div className='col-1'>
       <Button onClick={handleNavigateAddProduct}>Add Product</Button>
 
-    </AdminProduct>
     </div>
+    <div className='col-9'>
+      <AdminProduct/>
+    </div>
+    <div className='col-2'>  
+      <Sidebar isAdmin={true}
+      
+      />
+   
+    </div>
+    </div>
+    
   )
 }
 

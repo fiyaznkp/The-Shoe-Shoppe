@@ -20,7 +20,7 @@ const AdminProduct = ({children}) => {
   const handleFilter = (value)=>{
     if(value!="allProducts"){
       // console.log(value)
-      const filter= product.filter((e)=> e.Brand==value )
+      const filter= searchBackup.filter((e)=> e.Brand==value )
       setProduct(filter)
 
     }else{
@@ -29,12 +29,12 @@ const AdminProduct = ({children}) => {
   }
   const handleEnlargeImage = (id)=>{
     const prod = product.filter((e)=>e.id === id)
-    console.log(prod,"5465465465");
+    
     setModal(prod)
     setShow(true)
   }
   const handleSearch = (value)=>{
-    console.log(value,"handle search");
+    
     if(typeof value === 'string' && value.length > 0){
      const search = searchBackup.filter((e)=>e.Brand.toLowerCase().includes(value.toLowerCase()))
      setProduct(search)
@@ -45,7 +45,7 @@ const AdminProduct = ({children}) => {
   const handleDelete = (id)=>{
     const newArray = product.filter((pro)=>pro.id !=id)
     setProduct(newArray)
-    console.log(newArray);
+    
     
   }
   const handleUpdate = (item)=>{
@@ -72,7 +72,7 @@ const AdminProduct = ({children}) => {
           
           
           {
-            {/* console.log(item,"utem"); */}
+            
            return (<div  className='mx-4 my-3 h-100'  key={item.id}>
             <Card style={{width:"300px", height:"600px" ,boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"}} >
               <div style={{height:"250px", width:"250px"}}  className="card-image-container">

@@ -6,12 +6,12 @@ function AllProducts({handleFilter}) {
     const {filterValue,setFilterValue} = useContext(myContext)
     
     const handleChange = (e)=>{
-        console.log(e.target.value,"onchangevalue");
+        
         setFilterValue(e.target.value)
         handleFilter(e.target.value)
     }
    
-    console.log(filterValue,"filterValue");
+    
   return (
     <>
        

@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import { myContext } from "../../App"
+import addp from ".//addp.jpg"
 
 
 
@@ -13,7 +14,7 @@ const AdminLogin = () => {
         email:"admin@gmail.com",
         password:"admin123"
     }
-    const {trigger,setTrigger} = useContext(myContext)
+    const {trigger,setTrigger,loginUser,setLoginUser} = useContext(myContext)
     const navigate = useNavigate()
     
 
@@ -26,7 +27,7 @@ const AdminLogin = () => {
             localStorage.setItem("AdminLogin",true)
             localStorage.setItem("login",false)
             setTrigger(!trigger)
-            
+            setLoginUser(AdminCred)
             navigate('/adminhome')
         }
         
@@ -35,7 +36,8 @@ const AdminLogin = () => {
     return (
 
         <div style={{ height: "90vh" }} className="d-flex justify-content-center align-items-center p-0 m-0">
-            <div className="Login bg-dark-subtle p-5 m-0 rounded-3 ">
+         <img src={addp} style={{width:"100%", height:"900px", position:"absolute", top:"0px", left:"0px", zIndex:-1}}/>
+            <div className="Login bg-dark-subtle p-5 m-0 rounded-3" style={{opacity:"0.5"}}>
                 <form className="d-flex flex-column" onSubmit={handleSubmit}>
                     <label >Email</label>
                     <input name="email" type="text" placeholder="Enter Email" />
